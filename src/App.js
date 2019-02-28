@@ -18,8 +18,6 @@ class App extends Component {
     window.FS = new FS("userFS", { wipe: true });
     window.git = git;
     window.git.plugins.set("fs", window.FS);
-    console.log(git)
-    console.log(window.FS)
     window.pfs = pify(window.FS);
 
 
