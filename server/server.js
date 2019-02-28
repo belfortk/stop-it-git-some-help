@@ -1,6 +1,7 @@
 const express = require("express");
 const path = require("path");
 const morgan = require("morgan");
+// const file = require("../public/index.html")
 
 const app = express();
 
@@ -12,7 +13,7 @@ app.get('/ping', (req, res) => {
  });
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname + "public/index.html"));
+  res.sendFile('../public/index.html');
 });
 
 module.exports = app;
