@@ -22,49 +22,10 @@ class App extends Component {
     console.log(window.FS)
     window.pfs = pify(window.FS);
 
-    // this.homeDirectory = "/dev";
-    // this.corsProxy = "https://cors.isomorphic-git.org";
-    // this.githubUrl = "https://github.com/belfortk/git-some-help-start.git";
 
     window.pfs.mkdir(this.props.appState.globals.homeDirectory);
     window.pfs.readdir(this.props.appState.globals.homeDirectory)
 
-    // window.git
-    //   .clone({
-    //     dir: this.props.appState.globals.homeDirectory,
-    //     corsProxy: this.props.appState.globals.corsProxy,
-    //     url: this.githubUrl,
-    //     ref: "master",
-    //     singleBranch: true,
-    //     depth: 3
-    //   })
-    //   .then(() => {
-    //     window.pfs
-    //       .readdir(this.props.appState.globals.homeDirectory)
-    //       .then(data => {
-    //         const action = {
-    //           type: "UPDATE_FILE_DIRECTORY",
-    //           payload: data
-    //         };
-    //         dispatch(action);
-    //         // this.setState({
-    //         //   files: [...data]
-    //         // });
-    //       })
-    //       .then(() => {
-    //         window.git
-    //           .currentBranch({
-    //             dir: this.props.appState.globals.homeDirectory
-    //           })
-    //           .then(data => {
-    //             const action = {
-    //               type: "GET_CURRENT_DIRECTORY",
-    //               payload: data
-    //             };
-    //             dispatch(action);
-    //           });
-    //       });
-    //   });
   }
 
   executeCommand = command => {

@@ -1,7 +1,9 @@
 const initialState = {
   name: "mark",
   email: "mark@gmail.com",
-  githubPassword: 'DUMMY_WORD'
+  githubPassword: 'DUMMY_WORD',
+  remoteBranch: '',
+  remoteRepoURL: 'github.com/remote/repo'
 };
 
 export default function UserDetailsReducer(store = initialState, action) {
@@ -25,6 +27,20 @@ export default function UserDetailsReducer(store = initialState, action) {
       return {
         ...store,
         githubPassword: payload
+      };
+    }
+
+    case "UPDATE_REMOTE_REPO_URL": {
+      return {
+        ...store,
+        remoteRepoURL: payload
+      };
+    }
+
+    case "UPDATE_REMOTE_BRANCH": {
+      return {
+        ...store,
+        remoteBranch: payload
       };
     }
 

@@ -49,11 +49,12 @@ export const gitLogAction = directory => async dispatch => {
   }
 };
 
-export const gitClone = (
+export const gitCloneAction = (
   directory,
   corsProxy,
   githubUrl,
-  ref
+  ref,
+  singleBranch
 ) => async dispatch => {
   try {
     await window.git.clone({
@@ -61,7 +62,7 @@ export const gitClone = (
       corsProxy: corsProxy,
       url: githubUrl,
       ref: ref,
-      singleBranch: true,
+      singleBranch: singleBranch,
       depth: 3
     });
     const newfileDirectory = await window.pfs.readdir(directory);
