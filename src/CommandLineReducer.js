@@ -1,5 +1,5 @@
 const initialState = {
-  command: "git init"
+  command: ""
 };
 
 export default function CommandLineReducer(store = initialState, action) {
