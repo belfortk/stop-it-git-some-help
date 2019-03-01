@@ -1,3 +1,6 @@
+@charset "utf-8";
+@import "../node_modules/bulma/bulma.sass";
+
 .App {
   text-align: center;
 }
@@ -32,9 +35,19 @@
   }
 }
 
+html, body, #root, #root>div {
+  width: 100%;
+  height: 100%;
+}
+
+html, body, #root, #root>div, .user-detail {
+  background-color: $black-bis;
+  color: $white-bis;
+  font-family: 'IBM', monospace;
+}
 
 .git-command-input{
-  width: 100%
+  width: 100%;
 }
 .files-container{
   margin-bottom: 40px;
@@ -54,4 +67,17 @@
   .user-detail{
     width: 400px;
   }
+}
+
+.command-canvas {
+  outline:none;
+}
+
+.message {
+  background-color: $black-bis;
+}
+
+@font-face {
+  font-family: "IBM";
+  src: url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono")
 }
