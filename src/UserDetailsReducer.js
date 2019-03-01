@@ -1,9 +1,9 @@
 const initialState = {
-  name: "mark",
-  email: "mark@gmail.com",
-  githubPassword: 'DUMMY_WORD',
+  name: "",
+  email: "",
+  githubPassword: '',
   remoteBranch: '',
-  remoteRepoURL: 'github.com/remote/repo'
+  remoteRepoURL: ''
 };
 
 export default function UserDetailsReducer(store = initialState, action) {

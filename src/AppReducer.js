@@ -8,7 +8,8 @@ const initialState = {
     homeDirectory: "/dev",
     corsProxy: "https://cors.isomorphic-git.org",
     githubUrl: "https://github.com/StopItGitSomeHelp/githelpstarter.git",
-    repoUrl: 'https://github.com/StopItGitSomeHelp/githelpstarter'
+    repoUrl: 'https://github.com/StopItGitSomeHelp/githelpstarter',
+    commandClick: false
   }
 };
 
@@ -24,7 +25,6 @@ export default function AppReducer(store = initialState, action) {
     }
 
     case "UPDATE_GIT_LOG": {
-      debugger
       return {
         ...store,
         gitLog: payload
@@ -64,6 +64,7 @@ export default function AppReducer(store = initialState, action) {
         gitResponseMesssages: [...messagePayload, ...store.gitResponseMesssages]
       };
     }
+
     default: {
       return store;
     }

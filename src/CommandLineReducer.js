@@ -1,22 +1,37 @@
 const initialState = {
-  command: "git init"
+  command: "git init",
+  text: "$ git init",
+  caretOffset: 132,
+  caretColor: true
 };
 
 export default function CommandLineReducer(store = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
-    case "UPDATE_COMMAND": {
+    case "ENTER_COMMAND": {
       return {
+        ...store,
         command: payload
       };
     }
 
-    case "CLEAR_COMMAND_LINE": {
+    case "UPDATE_COMMAND": {
       return {
-        command: ""
+        ...store,
+        text: payload.text,
+        caretOffset: payload.offset,
+        command: payload.command
       };
     }
+
+    case "UPDATE_CARET_COLOR": {
+      return {
+        ...store,
+        caretColor: payload
+      }
+    }
+
     default: {
       return store;
     }

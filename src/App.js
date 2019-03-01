@@ -22,7 +22,7 @@ class App extends Component {
 
 
     window.pfs.mkdir(this.props.appState.globals.homeDirectory);
-    window.pfs.readdir(this.props.appState.globals.homeDirectory)
+    window.pfs.readdir(this.props.appState.globals.homeDirectory);
 
   }
 
@@ -248,11 +248,11 @@ class App extends Component {
           ))}
         </div>
 
-        <UserDetails handleUpdate={this.handleDetailsChange} />
+        <UserDetails handleUpdate={this.handleDetailsChange}/>
 
-        <div className="container console-container">
+        <div className="container console-container" id="console-container">
           Git Some Help
-          <CommandLine execute={this.executeCommand} />
+          <CommandLine execute={this.executeCommand}/>
           <div className="git-logs">
             {this.props.appState.gitResponseMesssages.map(item => (
               <p className="message" key={item.id}>
