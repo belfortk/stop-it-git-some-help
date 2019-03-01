@@ -3,15 +3,15 @@ import path from "path-browserify";
 
 export const gitInitAction = directory => async dispatch => {
   try {
-    console.log(await window.pfs.readdir(directory))
+    console.log(await window.pfs.readdir(directory));
     await window.git.init({ dir: path.resolve(directory) });
     const newDirectory = await window.pfs.readdir(directory);
-    console.log(newDirectory)
+    console.log(newDirectory);
     const NewFilesAction = {
-      type: 'UPDATE_FILE_DIRECTORY',
+      type: "UPDATE_FILE_DIRECTORY",
       payload: newDirectory
-    }
-    dispatch(NewFilesAction)
+    };
+    dispatch(NewFilesAction);
     const updateGitLogAction = {
       type: "UPDATE_WITH_ONE_GIT_RESPONSE_MESSAGE_LOG",
       payload: `Initialized empty Git repository in /Users${directory}/.git`
@@ -79,7 +79,10 @@ export const gitCloneAction = (
     };
     dispatch(fileDirectoryAction);
     dispatch(updateCurrentDirectoryAction);
-
+    dispatch({
+      type: "PLAY_REPO_LOADING",
+      payload: false
+    });
   } catch (error) {
     console.log(error);
   }
@@ -186,7 +189,7 @@ export const gitAddFilesAction = (directory, files) => async dispatch => {
     };
     dispatch(action);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
 };
 

@@ -3,7 +3,8 @@ const initialState = {
   email: "",
   githubPassword: '',
   remoteBranch: '',
-  remoteRepoURL: ''
+  remoteRepoURL: '',
+  playRepoLoading: false
 };
 
 export default function UserDetailsReducer(store = initialState, action) {
@@ -41,6 +42,13 @@ export default function UserDetailsReducer(store = initialState, action) {
       return {
         ...store,
         remoteBranch: payload
+      };
+    }
+
+    case "PLAY_REPO_LOADING": {
+      return {
+        ...store,
+        playRepoLoading: payload
       };
     }
 

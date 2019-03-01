@@ -13,6 +13,10 @@ class UserDetails extends Component {
   };
 
   handleClonePlayRepo = () => {
+    this.props.dispatch({
+      type: "PLAY_REPO_LOADING",
+      payload: true
+    })
     gitActions.gitCloneAction(
       this.props.globals.homeDirectory,
       this.props.globals.corsProxy,
@@ -38,7 +42,9 @@ class UserDetails extends Component {
         </p>
         <p>Github link: {this.props.globals.repoUrl}</p>
         <button
-          className="level button is-link is-outlined"
+          className={`level button is-link is-outlined ${
+            this.props.userDetails.playRepoLoading ? "is-loading" : ""
+          }`}
           onClick={this.handleClonePlayRepo}
           type="submit"
         >

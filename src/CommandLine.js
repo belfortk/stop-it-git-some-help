@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-const WebFont = require('webfontloader');
+import WebFont from 'webfontloader';
 
 export class CommandLine extends Component {
   constructor() {
