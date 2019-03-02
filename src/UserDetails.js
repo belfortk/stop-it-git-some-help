@@ -92,7 +92,7 @@ class UserDetails extends Component {
         />
         <button
           className="level button is-link is-outlined"
-          onClick={this.handleClonePlayRepo}
+          onClick={this.handleClonePlayRepo} //this should not call handleClonePlayRepo. This should clone the repo provided by user
           type="submit"
         >
           Clone personal repo

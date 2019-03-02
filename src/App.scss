@@ -1,6 +1,10 @@
 @charset "utf-8";
-// $button-hover-color: lightgrey
+
 @import "../node_modules/bulma/bulma.sass";
+
+.button.is-link.is-outlined.is-loading:hover, .button.is-link.is-outlined.is-loading:focus {
+  background-color: lightgrey;
+}
 
 .App {
   text-align: center;
